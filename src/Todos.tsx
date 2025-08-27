@@ -10,11 +10,9 @@ type Todo = {
 
 export const Todos = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [quickText, setQuickText] = useState("");
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editingTitle, setEditingTitle] = useState("");
   const [editingDescription, setEditingDescription] = useState("");
-  const [modalPos, setModalPos] = useState<{ x: number; y: number } | null>(null);
 
   // Estados para el modal de nueva tarea
   const [showNewModal, setShowNewModal] = useState(false);
@@ -26,17 +24,6 @@ export const Todos = () => {
       .get("http://localhost:4000/api/todos")
       .then((res) => setTodos(res.data));
   }, []);
-
-  // Añadir tarea rápida (solo título)
-  const addQuickTodo = () => {
-    if (!quickText.trim()) return;
-    axios
-      .post("http://localhost:4000/api/todos", { title: quickText })
-      .then((res) => {
-        setTodos([...todos, res.data]);
-        setQuickText("");
-      });
-  };
 
   // Añadir tarea con título y descripción
   const addFullTodo = () => {
@@ -69,11 +56,6 @@ export const Todos = () => {
   };
 
   // Editar tarea (solo título)
-  const handleEdit = (id: number, currentText: string, e: React.MouseEvent) => {
-    setEditingId(id);
-    setEditingTitle(currentText);
-    setModalPos({ x: e.clientX, y: e.clientY });
-  };
 
   // Nueva función para abrir el modal de edición con datos previos
   const openEditModal = (todo: Todo) => {
