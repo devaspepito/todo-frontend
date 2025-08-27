@@ -7,7 +7,7 @@ Este proyecto es el frontend de una aplicación de tareas (Todo) construida con 
 1. Clona el repositorio (si aún no lo has hecho):
 
    ```bash
-   git clone <url-del-repo>
+   git clone https://github.com/devaspepito/todo-frontend.git
    cd todo-frontend
    ```
 
@@ -15,8 +15,6 @@ Este proyecto es el frontend de una aplicación de tareas (Todo) construida con 
 
    ```bash
    bun install
-   # o con npm:
-   # npm install
    ```
 
 ## Ejecución en desarrollo
@@ -25,8 +23,7 @@ Para iniciar el servidor de desarrollo:
 
 ```bash
 bun run dev
-# o con npm:
-# npm run dev
+
 ```
 
 Esto abrirá la aplicación en [http://localhost:3000](http://localhost:3000).
@@ -37,8 +34,7 @@ Para construir la aplicación:
 
 ```bash
 bun run build
-# o con npm:
-# npm run build
+
 ```
 
 ## Lint
@@ -47,8 +43,6 @@ Para ejecutar el linter:
 
 ```bash
 bun run lint
-# o con npm:
-# npm run lint
 ```
 
 ## ¿Cómo funciona el frontend?
