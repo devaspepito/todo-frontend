@@ -73,5 +73,3 @@ http://localhost:4000/api/todos
 - `src/index.css`: Estilos globales.
 
 ---
-
-Para más detalles sobre la configuración de React, TypeScript y Vite, consulta la documentación oficial de cada tecnología.
